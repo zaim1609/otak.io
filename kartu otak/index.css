@@ -1,0 +1,158 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#318e7d;
+    cursor:default;
+    overflow: hidden;
+    /* -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none; */
+  }
+  
+  #tangan{
+    position: relative;
+    top: 700px;
+  }
+
+  #hadiah{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 43%;
+    /* transition: all 5s linear; */
+  }
+  .hadiah{
+    width: 200px;
+    display: none;
+  }
+
+  .petunjuk{
+    color: #318e7d;
+    transition: all 2s linear;
+  }
+ 
+  
+  #generator{
+    position:relative;
+    float:left;
+    width:5em;
+    height:5em;
+    background:black;
+    border-radius:50%;
+    border:3px outset #666;
+    box-shadow:inset 0 0 1em 0.5em #333, 0.5em 0.5em 1em rgba(0,0,0,0.2);
+    margin-left:6em;
+  }
+  
+  #axis{
+    position:relative;
+    width:3em;
+    height:3em;
+    top:50%;
+    left:50%;
+    margin:-1.5em;
+    background:#333;
+    border-radius:50%;
+    border:2px solid #999;
+    box-sizing:border-box;
+    border-left-color:#666;
+    border-right-color:#666;
+  }
+  
+  #lever{
+    position:relative;
+    width:1em;
+    height:7em;
+    background:#444;
+    border:2px solid #666;
+    box-sizing:border-box;
+    top:50%;
+    left:50%;
+    margin:-0.5em;
+    border-radius:0.5em;
+  }
+  
+  #nub{
+    position:absolute;
+    width:1.5em;
+    height:1.5em;
+    background:#666;
+    bottom:0;
+    left:-4px;
+    border:2px solid #888;
+    border-radius:50%;
+    margin:-0.25em;
+    cursor:pointer;
+  }
+  
+  #fuckupscreen{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    cursor:wait;
+    animation:fade 500ms forwards 1;
+    animation-delay:1.5s;
+  }
+  
+  
+  
+  /*ON ERROR*/
+  body[error="true"] #lightmodule{
+    background:#faa;
+  }
+  
+  body[error="true"] #light{
+    background: -moz-radial-gradient(center, ellipse cover, rgba(252,252,252,1) 0%, rgba(253,215,215,1) 8%, rgba(255,56,56,0.43) 42%, rgba(253,79,65,0.3) 50%, rgba(247,143,90,0) 72%, rgba(239,224,122,0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(252,252,252,1) 0%,rgba(253,215,215,1) 8%,rgba(255,56,56,0.43) 42%,rgba(253,79,65,0.3) 50%,rgba(247,143,90,0) 72%,rgba(239,224,122,0) 100%);
+    background: radial-gradient(ellipse at center, rgba(252,252,252,1) 0%,rgba(253,215,215,1) 8%,rgba(255,56,56,0.43) 42%,rgba(253,79,65,0.3) 50%,rgba(247,143,90,0) 72%,rgba(239,224,122,0) 100%);
+    animation:woop 150ms alternate infinite;
+  }
+  
+  @keyframes woop{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity:1;
+    }
+  }
+  
+  body[error="true"] #needle, body[error="true"] #axis{
+    animation:spin 200ms linear infinite;
+  }
+  
+  @keyframes spin{
+    from{
+      transform:rotate(75deg);
+    }
+    to{
+      transform:rotate(440deg);
+    }
+  }
+  
+  body[error="true"] #arrow{
+    animation:coctail 200ms alternate infinite;
+  }
+  
+  @keyframes coctail{
+    from{
+      left:5%;
+    }
+    to{
+      left:95%;
+    }
+  }
+  
+  @keyframes fade{
+    to {
+      background:rgba(255,255,255,0.7);
+    }
+  }
+  
+  body[error="true"] #fuckupscreen{
+    display:block;
+  }
